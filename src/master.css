@@ -4,3 +4,99 @@
   padding: 0;
   box-sizing: border-box;
 }
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #04151f;
+  > ul {
+    list-style: none;
+    width: 30%;
+    margin-top: 100px;
+    > li {
+      background-color: #183a37;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: 0.4s ease-in;
+      &:first-of-type {
+        border-radius: 5px 5px 0 0;
+      }
+      &:last-of-type {
+        border-radius: 0 0 5px 5px;
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #255652;
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        transition: 0.2s ease-in;
+      }
+      &:hover {
+        background: #1f4a47;
+        &::after {
+          left: 0;
+        }
+        > a {
+          padding-left: 22px;
+        }
+      }
+      > a {
+        transition: 0.2s ease-in;
+        padding: 20px 15px;
+        display: flex;
+        text-decoration: none;
+        color: white;
+        align-items: center;
+        > h2 {
+          font-size: 18px;
+          flex-grow: 1;
+        }
+        > img {
+          width: 18px;
+          height: 18px;
+          margin: 0 20px;
+        }
+        > span {
+          justify-self: end;
+        }
+      }
+      > ul {
+        list-style: none;
+        height: 0;
+        display: none;
+        > li {
+          background-color: #c44900;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          > a {
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+          }
+          &::before {
+            content: "";
+            background-color: #9d3b02;
+            width: 0px;
+            height: 100%;
+            transition: 0.1s ease-in;
+          }
+          &:hover {
+            background-color: #d95000;
+            &::before {
+              width: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
