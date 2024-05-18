@@ -13,6 +13,7 @@ _li.forEach((element, i) => {
       if (i != index) {
         item.nextElementSibling.style.height = "0px";
         item.setAttribute("data-status", "off");
+        spans[index].style.rotate = "0deg";
         item.nextElementSibling.querySelectorAll("li").forEach((element) => {
           element.style.transform = "translateX(-100%)";
         });
