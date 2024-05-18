@@ -10,6 +10,7 @@ main {
   display: flex;
   justify-content: center;
   background-color: #04151f;
+  font-family: "Roboto Condensed", sans-serif;
   > ul {
     list-style: none;
     width: 30%;
@@ -43,17 +44,18 @@ main {
         &::after {
           left: 0;
         }
-        > a {
+        > div {
           padding-left: 22px;
         }
       }
-      > a {
+      > div {
         transition: 0.2s ease-in;
         padding: 20px 15px;
         display: flex;
         text-decoration: none;
         color: white;
         align-items: center;
+        cursor: pointer;
         > h2 {
           font-size: 18px;
           flex-grow: 1;
@@ -65,19 +67,23 @@ main {
         }
         > span {
           justify-self: end;
+          transition: 0.2s ease-in;
         }
       }
       > ul {
         list-style: none;
-        height: 0;
-        display: none;
+        display: block;
+        transition: 0.3s ease-in;
         > li {
           background-color: #c44900;
           height: 60px;
           display: flex;
           align-items: center;
           cursor: pointer;
-          > a {
+          transform: translateX(-100%);
+          transition: 0.3s ease-in;
+
+          > div {
             padding: 20px;
             text-decoration: none;
             color: white;
@@ -94,6 +100,65 @@ main {
             &::before {
               width: 4px;
             }
+          }
+        }
+      }
+    }
+  }
+  > div {
+    width: 30%;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    > h1 {
+      > span {
+        font-size: 14px;
+        margin-right: 5px;
+      }
+    }
+    > p {
+      margin: 30px 0;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      > div {
+        display: flex;
+        align-items: center;
+        border: 2px solid white;
+        margin-right: 10px;
+        width: 200px;
+        height: 60px;
+        cursor: pointer;
+        overflow: hidden;
+        > a {
+          text-decoration: none;
+          display: flex;
+          color: white;
+          font-size: 14px;
+          width: 100%;
+          justify-content: center;
+          > span {
+            margin-right: 5px;
+          }
+        }
+        > span {
+          clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+          background-color: white;
+          color: #183a37;
+          height: 100%;
+          width: 0%;
+          transform: translateX(-100%);
+          display: flex;
+          align-content: center;
+          padding-left: 3px;
+          transition: 0.15s ease-in-out;
+        }
+        &:hover {
+          > span {
+            width: 40%;
+            transform: translateX(0%);
           }
         }
       }
